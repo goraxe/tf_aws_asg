@@ -21,7 +21,7 @@ variable "security_group" {
   description = "The security group the instances to use"
 }
 
-variable "user_data" {
+variable "user_data_path" {
   description = "The path to a file with user_data for the instances"
 }
 
