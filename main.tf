@@ -37,7 +37,7 @@ resource "aws_launch_configuration" "lc" {
 
 resource "aws_autoscaling_group" "ag" {
   //We want this to explicitly depend on the launch config above
-  depends_on = ["aws_launch_configuration.launch_config"]
+  depends_on = ["aws_launch_configuration.lc"]
   name = "${var.asg_name}"
 
   // Split out the AZs string into an array
