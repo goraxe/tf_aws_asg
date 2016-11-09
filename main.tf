@@ -20,7 +20,7 @@ resource "aws_launch_configuration" "lc" {
   iam_instance_profile = "${var.iam_instance_profile}"
   key_name             = "${var.key_name}"
   security_groups      = ["${var.security_group}"]
-  user_data            = "${file(var.user_data_path)}"
+  user_data            = "${var.user_data}"
 
   associate_public_ip_address = "${var.associate_public_ip_address}"
   enable_monitoring           = "${var.enable_monitoring}"

@@ -21,8 +21,8 @@ variable "security_group" {
   description = "The security group the instances to use"
 }
 
-variable "user_data_path" {
-  description = "The path to a file with user_data for the instances"
+variable "user_data" {
+  description = "The user_data for the instances"
 }
 
 variable "associate_public_ip_address" {
