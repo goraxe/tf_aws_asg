@@ -11,8 +11,9 @@ variable "ami_id" {}
 variable "instance_type" {}
 variable "iam_instance_profile" {}
 variable "key_name" {}
-variable "security_group" {
-  description = "The security group the instances to use"
+variable "security_groups" {
+  description = "The security groups the instances to use"
+  type = "list"
 }
 
 variable "user_data" {
@@ -49,15 +50,14 @@ variable "health_check_type" {
 
 variable "subnet_azs" {
   description = "The VPC subnet IDs"
-  // comma separated list
+  type = "list"
 }
 
 variable "azs" {
   description = "Availability Zones"
-  // comma separated list
+  type = "list"
 }
 
-// Variables for providers used in this module
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
-variable "aws_region" {}
+variable "tag_name" {
+  description = "The instance name to propagate from the group at launch"
+}
