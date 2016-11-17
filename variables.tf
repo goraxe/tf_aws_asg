@@ -61,3 +61,8 @@ variable "azs" {
 variable "tag_name" {
   description = "The instance name to propagate from the group at launch"
 }
+
+variable "instance_monitoring" {
+  description = "Enable/Disable detailed instance monitoring"
+  default = false
+}
