@@ -40,6 +40,8 @@ resource "aws_autoscaling_group" "main_asg" {
   health_check_grace_period = "${var.health_check_grace_period}"
   health_check_type = "${var.health_check_type}"
 
+  enabled_metrics = ["${var.asg_metrics}"]
+
   tag = {
     key = "Name"
     value = "${var.tag_name}"
