@@ -17,8 +17,9 @@ variable "ami_id" {}
 variable "instance_type" {}
 variable "iam_instance_profile" {}
 variable "key_name" {}
-variable "security_group" {
-  description = "The security group the instances to use"
+variable "security_groups" {
+  description = "The security groups the instances to use"
+  type = "list"
 }
 
 variable "user_data" {
@@ -74,12 +75,12 @@ variable "health_check_type" {
 
 variable "subnet_azs" {
   description = "The VPC subnet IDs"
-  // comma separated list
+  type = "list"
 }
 
 variable "azs" {
   description = "Availability Zones"
-  // comma separated list
+  type = "list"
 }
 
 variable "tag1_key" { default = " " }
@@ -101,3 +102,15 @@ variable "tag4_propagate" { default = false }
 variable "tag5_key" { default = " " }
 variable "tag5_value" { default = " " }
 variable "tag5_propagate" { default = false }
+
+variable "instance_monitoring" {
+  description = "Enable/Disable detailed instance monitoring"
+  default = false
+}
+
+variable "asg_metrics" {
+  // See link for metrics: http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/as-metricscollected.html
+  description = "A list of metrics to collect"
+  type = "list"
+  default = []
+}

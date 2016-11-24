@@ -43,9 +43,9 @@ resource "aws_autoscaling_group" "ag" {
   // Split out the AZs string into an array
   // The chosen availability zones *must* match
   // the AZs the VPC subnets are tied to.
-  availability_zones = ["${split(",", var.azs)}"]
+  availability_zones = ["${var.azs}"]
   // Split out the subnets string into an array
-  vpc_zone_identifier = ["${split(",", var.subnet_azs)}"]
+  vpc_zone_identifier = ["${var.subnet_azs}"]
 
   // Uses the ID from the launch config created above
   launch_configuration = "${aws_launch_configuration.lc.id}"
