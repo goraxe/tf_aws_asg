@@ -2,11 +2,6 @@
 // Module: tf_aws_asg
 //
 
-provider "aws" {
-  profile = "${var.aws_provider_profile}"
-  region  = "${var.aws_provider_region}"
-}
-
 // This template creates the following resources
 // - A launch configuration
 // - A auto-scaling group
