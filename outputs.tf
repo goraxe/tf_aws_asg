@@ -11,9 +11,9 @@ output "asg_id" {
 }
 
 output "asg_name" {
-    value = "${aws_autoscaling_group.main_asg.name}"
+    value = "${aws_autoscaling_group.ag.name}"
 }
 
 output "asg_desired_capacity" {
-    value = "${aws_autoscaling_group.main_asg.desired_capacity}"
+    value = "${aws_autoscaling_group.ag.desired_capacity}"
 }

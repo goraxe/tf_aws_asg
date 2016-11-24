@@ -19,7 +19,7 @@ resource "aws_launch_configuration" "lc" {
   instance_type        = "${var.instance_type}"
   iam_instance_profile = "${var.iam_instance_profile}"
   key_name             = "${var.key_name}"
-  security_groups      = ["${var.security_group}"]
+  security_groups      = ["${var.security_groups}"]
   user_data            = "${var.user_data}"
 
   associate_public_ip_address = "${var.associate_public_ip_address}"
