@@ -35,7 +35,7 @@ resource "aws_autoscaling_group" "ag" {
   depends_on = ["aws_launch_configuration.lc"]
 
   # interoplate the launchconfig name into the asg name to force updates
-  name = "${var.asg_name} - ${aws_launch_configuration.lc.lc_name}"
+  name = "${var.asg_name} - ${aws_launch_configuration.lc.name}"
 
   // Split out the AZs string into an array
   // The chosen availability zones *must* match
